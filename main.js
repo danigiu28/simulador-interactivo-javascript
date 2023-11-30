@@ -42,8 +42,14 @@ function generarTarea() {
 
 // Función para preguntar al usuario si quiere continuar
 function continuar() {
-    const respuesta = prompt('¿Quieres continuar? (s/n)');
-    return respuesta.toLowerCase() === 's';
+    let respuesta;
+    do {
+        respuesta = prompt('¿Quieres continuar? (s/n)');
+        if (respuesta !== 's' && respuesta !== 'n') {
+            alert('Por favor, ingrese "s" o "n".');
+        }
+    } while (respuesta !== 's' && respuesta !== 'n');
+    return respuesta === 's';
 }
 
 // Programa
